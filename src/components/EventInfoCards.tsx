@@ -31,8 +31,8 @@ const infoCards = [
   {
     icon: "📅",
     title: "Event Date",
-    value: "TBA",
-    sub: "Stay tuned for announcement",
+    value: "12-04-2026",
+    sub: "12:00 PM to 3:00 PM",
     color: "var(--primary)",
     glow: "rgba(188, 19, 254, 0.15)",
     border: "rgba(188, 19, 254, 0.25)",

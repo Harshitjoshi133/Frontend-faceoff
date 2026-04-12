@@ -3,32 +3,41 @@
 import { useState, useEffect } from "react";
 
 export default function CountdownSection() {
+  const [phase, setPhase] = useState("Event will start in");
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
 
   useEffect(() => {
-    // Set target date — TBA defaults to 30 days from now as placeholder
-    const target = new Date();
-    target.setDate(target.getDate() + 30);
-    target.setHours(10, 0, 0, 0);
+    // Event Date: 12-04-2026 12:00 to 15:00
+    const startTime = new Date(2026, 3, 12, 12, 0, 0); // 12th April 2026, 12:00
+    const endTime = new Date(2026, 3, 12, 15, 0, 0);   // 12th April 2026, 15:00
 
     const tick = () => {
       const now = new Date();
-      const diff = target.getTime() - now.getTime();
-      if (diff <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
+      
+      if (now < startTime) {
+        setPhase("Event will start in");
+        const diff = startTime.getTime() - now.getTime();
+        setTimeLeft({
+          hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((diff / 1000 / 60) % 60),
+          seconds: Math.floor((diff / 1000) % 60),
+        });
+      } else if (now >= startTime && now < endTime) {
+        setPhase("Event will end in");
+        const diff = endTime.getTime() - now.getTime();
+        setTimeLeft({
+          hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((diff / 1000 / 60) % 60),
+          seconds: Math.floor((diff / 1000) % 60),
+        });
+      } else {
+        setPhase("Competition Ended");
+        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
       }
-      setTimeLeft({
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / 1000 / 60) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-      });
     };
 
     tick();
@@ -39,7 +48,6 @@ export default function CountdownSection() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   const units = [
-    { label: "Days", value: timeLeft.days },
     { label: "Hours", value: timeLeft.hours },
     { label: "Minutes", value: timeLeft.minutes },
     { label: "Seconds", value: timeLeft.seconds },
@@ -92,7 +100,7 @@ export default function CountdownSection() {
             color: "var(--on-surface)",
           }}
         >
-          Competition Begins In
+          {phase}
         </h2>
 
         {/* Countdown cards */}
@@ -141,7 +149,7 @@ export default function CountdownSection() {
               fontWeight: "500",
             }}
           >
-            📅 Date: To Be Announced — Countdown is illustrative
+            📅 Date: 12-04-2026 / 12:00 PM to 3:00 PM
           </span>
         </div>
       </div>
