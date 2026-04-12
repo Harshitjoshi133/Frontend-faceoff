@@ -13,11 +13,11 @@ export default function CountdownSection() {
   useEffect(() => {
     // Event Date: 12-04-2026 12:00 to 15:00
     const startTime = new Date(2026, 3, 12, 12, 0, 0); // 12th April 2026, 12:00
-    const endTime = new Date(2026, 3, 12, 15, 0, 0);   // 12th April 2026, 15:00
+    const endTime = new Date(2026, 3, 12, 15, 15, 0);   // 12th April 2026, 15:00
 
     const tick = () => {
       const now = new Date();
-      
+
       if (now < startTime) {
         setPhase("Event will start in");
         const diff = startTime.getTime() - now.getTime();
