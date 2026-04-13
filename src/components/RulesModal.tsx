@@ -9,54 +9,49 @@ interface RulesModalProps {
 
 const rules = [
   {
-    title: "Team Composition",
+    title: "Mission Objective",
     detail:
-      "Each team must have between 3 and 5 members. All members must be registered students of BIAS. Solo or 2-person teams will not be accepted.",
+      "Your sole objective is to query the provided fiftyville.db to answer three questions: Who the thief is, What city the thief escaped to, and Who the accomplice is.",
   },
   {
-    title: "Problem Statement Selection",
+    title: "Team Composition",
     detail:
-      "Teams must choose exactly ONE problem statement at the start of the event. Switching problem statements mid-competition is not allowed.",
+      "Each detective squad must have between 3 and 5 members. All members must be registered students of BIAS.",
   },
   {
     title: "Time Limit",
     detail:
-      "The competition runs for exactly 3 hours. Work submitted after the deadline will not be evaluated. Manage your time wisely.",
+      "The Bug Bounty investigation runs for 2.5 hours (12:00 PM to 02:30 PM). Logs submitted after the deadline will not be evaluated.",
   },
   {
-    title: "Technology Restrictions",
+    title: "Operation Protocol",
     detail:
-      "Participants may use any HTML, CSS, and JavaScript technologies including frameworks (React, Vue, etc.). AI code generation tools (GitHub Copilot, ChatGPT for code) are NOT permitted.",
+      "Participants must use the secure Neon DB Terminal on the Activity Page to run standard SQL SELECT queries. DESTRUCTIVE operations (INSERT, UPDATE, DELETE) or attempting to drop tables will result in immediate disqualification.",
   },
   {
-    title: "Asset Usage",
+    title: "AI Tools & Assistance",
     detail:
-      "Free stock images, icon libraries (e.g., Font Awesome, Heroicons), and Google Fonts are allowed. Paid assets or code copied from external sources without attribution will result in disqualification.",
+      "You must rely on your team's SQL expertise and deductive reasoning. The use of AI code assistants (ChatGPT, Copilot, Claude) to write queries is strictly prohibited.",
   },
   {
     title: "Submission Format",
     detail:
-      "Teams must submit a GitHub repository link containing all project files. The repository must include a README with setup instructions. Judges must be able to open the project in a browser within 5 minutes.",
+      "At the end of the time limit, teams must submit their three final answers AND a log of the exact SQL queries used to deduce them. Without query proof, answers will be discarded.",
   },
   {
     title: "Code of Conduct",
     detail:
-      "All participants are expected to maintain respectful conduct throughout the event. Any form of plagiarism, sabotage, or disruptive behavior will result in immediate disqualification.",
+      "All participants are expected to maintain respectful conduct. Sabotaging another team's queries, sharing answers, or disruptive behavior will result in disqualification.",
   },
   {
-    title: "Judging & Final Decision",
+    title: "Judging Criteria",
     detail:
-      "The judges' scores are final. Disputes must be raised with the organizing team during the grace period before scores are announced. No appeals will be accepted after the announcement.",
+      "Evaluation is based on: 1. Correctness of answers, 2. Efficiency and logic of the SQL queries used (e.g. using proper JOINs). Ties will be broken by submission time.",
   },
   {
     title: "Venue Rules",
     detail:
-      "Participants must remain in the NASSCOM Lab during competition hours. Food and beverages are allowed at the designated area. Please keep the workspace clean.",
-  },
-  {
-    title: "Device & Connectivity",
-    detail:
-      "Each team is responsible for their own laptops and equipment. The venue will provide Wi-Fi. Power strips will be available — bring your own charging cables.",
+      "Participants must remain in the NASSCOM Lab during the investigation. Keep the workspace clean and adhere to all facility guidelines.",
   },
 ];
 
@@ -110,7 +105,7 @@ export default function RulesModal({ isOpen, onClose }: RulesModalProps) {
               Rules & Guidelines
             </h2>
             <p style={{ fontSize: "0.9rem", color: "var(--on-surface-muted)", marginTop: "8px" }}>
-              Frontend Faceoff — BIAS Coding Club
+              Bug Bounty — BIAS Coding Club
             </p>
           </div>
           <button

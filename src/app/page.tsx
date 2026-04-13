@@ -4,9 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import CountdownSection from "@/components/CountdownSection";
+import ChallengeSection from "@/components/ChallengeSection";
 import EventInfoCards from "@/components/EventInfoCards";
-import ProblemStatements from "@/components/ProblemStatements";
-import JudgingCriteria from "@/components/JudgingCriteria";
 import RulesModal from "@/components/RulesModal";
 import Footer from "@/components/Footer";
 
@@ -51,9 +50,7 @@ export default function HomePage() {
       <main>
         <HeroSection onRulesClick={() => setRulesOpen(true)} />
         <CountdownSection />
-        <EventInfoCards />
-        <ProblemStatements />
-        <JudgingCriteria />
+        <ChallengeSection />
       </main>
 
       <Footer />

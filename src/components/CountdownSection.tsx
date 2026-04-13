@@ -11,9 +11,9 @@ export default function CountdownSection() {
   });
 
   useEffect(() => {
-    // Event Date: 12-04-2026 12:00 to 15:00
-    const startTime = new Date(2026, 3, 12, 12, 0, 0); // 12th April 2026, 12:00
-    const endTime = new Date(2026, 3, 12, 15, 30, 0);   // 12th April 2026, 15:00
+    // Event Date: 13-04-2026 12:00 to 02:30 (14:30)
+    const startTime = new Date(2026, 3, 12, 12, 0, 0); // 13th April 2026, 12:00
+    const endTime = new Date(2026, 3, 12, 14, 30, 0);   // 13th April 2026, 14:30
 
     const tick = () => {
       const now = new Date();
@@ -22,7 +22,7 @@ export default function CountdownSection() {
         setPhase("Event will start in");
         const diff = startTime.getTime() - now.getTime();
         setTimeLeft({
-          hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+          hours: Math.floor((diff / (1000 * 60 * 60)) % 24) + (Math.floor(diff / (1000 * 60 * 60 * 24)) * 24),
           minutes: Math.floor((diff / 1000 / 60) % 60),
           seconds: Math.floor((diff / 1000) % 60),
         });
@@ -71,7 +71,7 @@ export default function CountdownSection() {
           transform: "translate(-50%, -50%)",
           width: "600px",
           height: "300px",
-          background: "radial-gradient(ellipse, rgba(188, 19, 254, 0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(0, 251, 251, 0.08) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -86,8 +86,8 @@ export default function CountdownSection() {
         }}
         className="fade-in-up"
       >
-        <div className="section-tag-purple section-tag" style={{ marginBottom: "16px" }}>
-          ⏳ Competition Countdown
+        <div className="section-tag-purple section-tag glass" style={{ marginBottom: "16px", border: "1px solid rgba(188, 19, 254, 0.3)" }}>
+          ⏳ Access Denied... Decrypting
         </div>
 
         <h2
@@ -114,22 +114,31 @@ export default function CountdownSection() {
           }}
         >
           {units.map((unit) => (
-            <div key={unit.label} className="countdown-card">
-              <div className="countdown-number">{pad(unit.value)}</div>
-              <div className="countdown-label">{unit.label}</div>
+            <div key={unit.label} className="countdown-card glass" style={{
+              background: "rgba(19, 19, 25, 0.8)",
+              border: "1px solid rgba(0, 251, 251, 0.2)",
+              boxShadow: "0 0 30px rgba(0, 251, 251, 0.05) inset",
+            }}>
+              <div className="countdown-number gradient-text" style={{
+                backgroundImage: "linear-gradient(to bottom, #fff, var(--secondary))",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}>{pad(unit.value)}</div>
+              <div className="countdown-label" style={{ color: "var(--secondary)" }}>{unit.label}</div>
             </div>
           ))}
         </div>
 
         {/* TBA notice */}
         <div
-          className="glass"
+          className="glass hover-glow"
           style={{
             display: "inline-flex",
             alignItems: "center",
             gap: "10px",
             padding: "10px 24px",
             borderRadius: "100px",
+            border: "1px solid rgba(255, 255, 255, 0.05)"
           }}
         >
           <span
@@ -137,9 +146,9 @@ export default function CountdownSection() {
               width: "8px",
               height: "8px",
               borderRadius: "50%",
-              background: "var(--tertiary)",
+              background: "var(--primary)",
               display: "inline-block",
-              boxShadow: "0 0 10px var(--tertiary)",
+              boxShadow: "0 0 10px var(--primary)",
             }}
           />
           <span
@@ -149,7 +158,7 @@ export default function CountdownSection() {
               fontWeight: "500",
             }}
           >
-            📅 Date: 12-04-2026 / 12:00 PM to 3:00 PM
+            📅 Date: 13-04-2026 / 12:00 PM to 02:30 PM (DB Format)
           </span>
         </div>
       </div>

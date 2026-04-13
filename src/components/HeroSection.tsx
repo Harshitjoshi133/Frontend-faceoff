@@ -74,9 +74,19 @@ export default function HeroSection({ onRulesClick }: HeroSectionProps) {
         }}
       >
         {/* Top badge */}
-        <div style={{ marginBottom: "24px" }}>
-          <span className="section-tag">
-            🎓 Coding Club · Birla Institute of Applied Sciences
+        <div className="animate-float" style={{ marginBottom: "32px", display: "inline-block" }}>
+          <span className="glass" style={{
+            padding: "10px 24px",
+            borderRadius: "100px",
+            color: "var(--on-surface)",
+            border: "1px solid rgba(0, 251, 251, 0.3)",
+            boxShadow: "0 0 20px rgba(0, 251, 251, 0.15)",
+            backdropFilter: "blur(12px)",
+            fontWeight: "600",
+            fontSize: "0.9rem",
+            letterSpacing: "0.05em"
+          }}>
+            🕵️‍♂️ The Mystery Unfolds
           </span>
         </div>
 
@@ -84,36 +94,53 @@ export default function HeroSection({ onRulesClick }: HeroSectionProps) {
         <h1
           className="font-display"
           style={{
-            fontSize: "clamp(3rem, 8vw, 6.5rem)",
-            fontWeight: "700",
+            fontSize: "clamp(3rem, 8vw, 7rem)",
+            fontWeight: "800",
             letterSpacing: "-0.03em",
-            lineHeight: "1.0",
-            marginBottom: "24px",
+            lineHeight: "1.05",
+            marginBottom: "32px",
+            textShadow: "0 0 40px rgba(188, 19, 254, 0.3)"
           }}
         >
-          <span className="gradient-text">Frontend</span>
-          <br />
-          <span style={{ color: "var(--on-surface)" }}>Faceoff</span>
+          <span className="gradient-text" style={{ backgroundImage: "linear-gradient(135deg, #00FBFB, #BC13FE)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Bug Bounty</span>
         </h1>
 
         {/* Subtitle */}
-        <p
+        <div
+          className="glass hover-glow"
           style={{
-            fontSize: "clamp(1rem, 2.5vw, 1.35rem)",
-            color: "var(--on-surface-muted)",
-            maxWidth: "600px",
-            margin: "0 auto 16px",
-            lineHeight: "1.6",
-            fontWeight: "400",
+            padding: "24px 32px",
+            borderRadius: "24px",
+            background: "rgba(19, 19, 25, 0.6)",
+            border: "1px solid rgba(255, 255, 255, 0.05)",
+            boxShadow: "0 10px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(188, 19, 254, 0.1)",
+            maxWidth: "680px",
+            margin: "0 auto 32px",
+            position: "relative",
+            overflow: "hidden",
+            transition: "all 0.3s ease"
           }}
         >
-          A team-based frontend development competition where creativity meets
-          code — design and build stunning web interfaces in a{" "}
-          <span style={{ color: "var(--primary)", fontWeight: "600" }}>
-            3-hour sprint
-          </span>
-          .
-        </p>
+          <div style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "2px",
+            background: "linear-gradient(90deg, transparent, var(--secondary), var(--primary), transparent)"
+          }} />
+          <p
+            style={{
+              fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)",
+              color: "var(--on-surface-muted)",
+              lineHeight: "1.7",
+              fontWeight: "400",
+              margin: 0
+            }}
+          >
+            ...where they solve the <span style={{ color: "var(--secondary)", fontWeight: "600", textShadow: "0 0 15px var(--secondary)" }}>Mystery</span> using the Power of <span style={{ color: "var(--primary)", fontWeight: "800", letterSpacing: "1px", textShadow: "0 0 20px var(--primary)" }}>DB</span>.
+          </p>
+        </div>
 
         {/* Venue badge */}
         <div style={{ marginBottom: "48px" }}>
@@ -142,54 +169,19 @@ export default function HeroSection({ onRulesClick }: HeroSectionProps) {
             marginBottom: "56px",
           }}
         >
-          <a
-            id="hero-register-btn"
-            href="https://forms.gle/zKiP3hgJ1E7oX3Gz6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{ fontSize: "1.05rem" }}
-          >
-            🚀 Register Your Team
-          </a>
           <button
             id="hero-rules-btn"
             onClick={onRulesClick}
-            className="btn-secondary"
-            style={{ fontSize: "1.05rem" }}
+            className="btn-secondary glass"
+            style={{ 
+              fontSize: "1.05rem",
+              background: "rgba(0, 251, 251, 0.1)",
+              border: "1px solid rgba(0, 251, 251, 0.3)",
+              boxShadow: "0 0 20px rgba(0, 251, 251, 0.1)"
+            }}
           >
             📋 View Rules
           </button>
-        </div>
-
-        {/* Registration URL */}
-        <div
-          className="glass"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "12px",
-            padding: "12px 24px",
-            borderRadius: "12px",
-          }}
-        >
-          <span style={{ fontSize: "0.8rem", color: "var(--on-surface-muted)" }}>
-            Registration Form:
-          </span>
-          <a
-            href="https://forms.gle/zKiP3hgJ1E7oX3Gz6"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontSize: "0.85rem",
-              color: "var(--primary)",
-              fontWeight: "500",
-              textDecoration: "none",
-              fontFamily: "monospace",
-            }}
-          >
-            forms.gle/zKiP3hgJ1E7oX3Gz6
-          </a>
         </div>
 
         {/* Scroll hint */}

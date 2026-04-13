@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { TerminalSquare, Bug, ShieldAlert } from "lucide-react";
 
 interface NavbarProps {
   onRulesClick: () => void;
@@ -56,7 +58,7 @@ export default function Navbar({ onRulesClick }: NavbarProps) {
               fontFamily: "'Space Grotesk', sans-serif",
             }}
           >
-            FF
+            <Bug size={20} color="#0A0A0F" />
           </div>
           <span
             className="font-display"
@@ -67,7 +69,7 @@ export default function Navbar({ onRulesClick }: NavbarProps) {
               letterSpacing: "-0.01em",
             }}
           >
-            Frontend Faceoff
+            Bug Bounty
           </span>
         </div>
 
@@ -119,16 +121,13 @@ export default function Navbar({ onRulesClick }: NavbarProps) {
             Rules
           </button>
 
-          <a
-            id="nav-register-btn"
-            href="https://forms.gle/zKiP3hgJ1E7oX3Gz6"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/activity"
             className="btn-primary"
-            style={{ padding: "9px 22px", fontSize: "0.875rem" }}
+            style={{ padding: "9px 22px", fontSize: "0.875rem", display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}
           >
-            Register →
-          </a>
+            <TerminalSquare size={16} /> Terminal
+          </Link>
         </div>
       </div>
     </nav>

@@ -46,14 +46,14 @@ export default function Footer() {
                   fontFamily: "'Space Grotesk', sans-serif",
                 }}
               >
-                FF
+                BB
               </div>
               <div>
                 <div
                   className="font-display"
                   style={{ fontWeight: "700", fontSize: "1rem", color: "var(--on-surface)" }}
                 >
-                  Frontend Faceoff
+                  Bug Bounty
                 </div>
                 <div style={{ fontSize: "0.75rem", color: "var(--on-surface-muted)" }}>
                   BIAS Coding Club
@@ -61,8 +61,8 @@ export default function Footer() {
               </div>
             </div>
             <p style={{ fontSize: "0.85rem", color: "var(--on-surface-muted)", lineHeight: "1.65" }}>
-              A team-based frontend competition by the Coding Club of Birla Institute of Applied Sciences.
-              Build. Create. Faceoff.
+              A team-based bug bounty and database mystery competition by the Coding Club of Birla Institute of Applied Sciences.
+              Investigate. Query. Solve.
             </p>
           </div>
 
@@ -121,19 +121,17 @@ export default function Footer() {
                 marginBottom: "16px",
               }}
             >
-              Register
+              Activity
             </div>
             <a
-              href="https://forms.gle/zKiP3hgJ1E7oX3Gz6"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/activity"
               className="btn-primary"
-              style={{ display: "inline-block", marginBottom: "12px" }}
+              style={{ display: "inline-block", marginBottom: "12px", textDecoration: "none" }}
             >
-              🚀 Register Your Team
+              🚀 Launch DB Terminal
             </a>
             <div style={{ fontSize: "0.8rem", color: "var(--on-surface-muted)" }}>
-              Team size: 3–5 members
+              Access fiftyville.db
             </div>
           </div>
         </div>

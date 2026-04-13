@@ -2,20 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Frontend Faceoff | BIAS Coding Club",
+  title: "Bug Bounty | BIAS Coding Club",
   description:
-    "Frontend Faceoff – A team-based frontend development competition by the Coding Club of Birla Institute of Applied Sciences. Design and build creative web interfaces in a 3-hour sprint.",
+    "Bug Bounty – A team-based bug bounty and DB mystery competition by the Coding Club of Birla Institute of Applied Sciences. Investigate and solve the mystery in a 3-hour sprint.",
   keywords: [
-    "Frontend Faceoff",
+    "Bug Bounty",
+    "fiftyville",
+    "SQL database challenge",
     "BIAS Coding Club",
-    "web development competition",
+    "database competition",
     "hackathon",
     "Birla Institute of Applied Sciences",
   ],
   openGraph: {
-    title: "Frontend Faceoff | BIAS Coding Club",
+    title: "Bug Bounty | BIAS Coding Club",
     description:
-      "A team-based frontend development competition. Build stunning web UIs in 3 hours.",
+      "A database mystery competition. Investigate and solve the Fiftyville mystery in 3 hours.",
     type: "website",
   },
 };
