@@ -81,37 +81,6 @@ export default function Navbar({ onRulesClick }: NavbarProps) {
             gap: "32px",
           }}
         >
-          {[
-            { label: "About", id: "about" },
-            { label: "Problem Statements", id: "problem-statements" },
-            { label: "Judging", id: "judging" },
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              style={{
-                background: "none",
-                border: "none",
-                color: "var(--on-surface-muted)",
-                fontSize: "0.9rem",
-                cursor: "pointer",
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: "500",
-                transition: "color 0.2s",
-                padding: "4px 0",
-              }}
-              onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--on-surface)")
-              }
-              onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color =
-                  "var(--on-surface-muted)")
-              }
-            >
-              {item.label}
-            </button>
-          ))}
-
           <button
             id="nav-rules-btn"
             onClick={onRulesClick}

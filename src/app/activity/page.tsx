@@ -198,9 +198,21 @@ export default function ActivityPage() {
           <h1 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: "800", color: "var(--on-surface)", marginBottom: "16px", textShadow: "0 0 30px rgba(0, 251, 251, 0.3)" }}>
             Terminal Interface
           </h1>
-          <p style={{ color: "var(--on-surface-muted)", fontSize: "1.1rem" }}>
+          <p style={{ color: "var(--on-surface-muted)", fontSize: "1.1rem", marginBottom: "24px" }}>
             Write and execute SQL queries securely against the live <code style={{ color: "var(--primary)", background: "rgba(188, 19, 254, 0.1)", padding: "2px 6px", borderRadius: "4px" }}>fiftyville.db</code> database. Find the thief!
           </p>
+          
+          {/* Mystery Prompt */}
+          <div className="glass hover-glow" style={{ padding: "24px", borderRadius: "12px", border: "1px solid rgba(0, 251, 251, 0.3)", background: "rgba(0, 251, 251, 0.05)", textAlign: "left", boxShadow: "insert 0 0 20px rgba(0, 251, 251, 0.1)" }}>
+            <h3 style={{ color: "var(--secondary)", display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px", fontSize: "1.3rem" }}>
+              <ShieldAlert size={20} /> Case File: The Fiftyville Mystery
+            </h3>
+            <p style={{ color: "var(--on-surface-muted)", fontSize: "1.05rem", lineHeight: "1.6" }}>
+              A massive theft of the prized golden duck mascot took place on <strong style={{ color: "var(--on-surface)" }}>July 28, 2025</strong>, at the <strong style={{ color: "var(--on-surface)" }}>Humphrey Street bakery</strong>. 
+              The Fiftyville police have compiled a sprawling database of town records, interviews, flights, and ATM transactions. 
+              Your objective is to explore the DB using SQL. You must identify the <strong style={{ color: "#ff5f56" }}>Thief</strong>, the town the thief <strong style={{ color: "#ffbd2e" }}>Escaped To</strong>, and the <strong style={{ color: "#27c93f" }}>Accomplice</strong> who helped them!
+            </p>
+          </div>
         </motion.div>
 
         {/* Terminal Container */}
