@@ -13,7 +13,7 @@ export default function CountdownSection() {
   useEffect(() => {
     // Event Date: 13-04-2026 12:00 to 02:30 (14:30)
     const startTime = new Date(2026, 3, 12, 12, 0, 0); // 13th April 2026, 12:00
-    const endTime = new Date(2026, 3, 12, 14, 30, 0);   // 13th April 2026, 14:30
+    const endTime = new Date(2026, 3, 13, 14, 30, 0);   // 13th April 2026, 14:30
 
     const tick = () => {
       const now = new Date();
